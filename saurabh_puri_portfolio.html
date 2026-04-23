@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saurabh Puri — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0a0a0a;color:#f0f0f0;font-family:'Sora',sans-serif;min-height:100vh}
+    .portfolio{max-width:680px;margin:0 auto;padding-bottom:2rem}
+    .hero{position:relative;padding:3rem 2rem 2rem;background:linear-gradient(135deg,#0a0a0a 0%,#111820 60%,#0a1a0f 100%);border-bottom:1px solid #1a2a1a;display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap}
+    .hero-photo{flex-shrink:0;width:120px;height:120px;border-radius:50%;border:2.5px solid #2ecc71;overflow:hidden;box-shadow:0 0 0 6px rgba(46,204,113,0.1)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .hero-text{flex:1;min-width:200px}
+    .name{font-family:'Space Mono',monospace;font-size:1.9rem;font-weight:700;color:#fff;letter-spacing:-0.5px;line-height:1.1}
+    .name span{color:#2ecc71}
+    .role{font-size:0.82rem;color:#4ade80;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin:0.4rem 0 0.8rem}
+    .tagline{font-size:0.95rem;color:#a0adb0;line-height:1.6;max-width:380px}
+    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.1rem}
+    .badge{font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;background:rgba(46,204,113,0.1);color:#4ade80;border:1px solid rgba(46,204,113,0.25)}
+    .badge.gold{background:rgba(212,175,55,0.12);color:#f0c040;border-color:rgba(212,175,55,0.3)}
+    .badge.blue{background:rgba(56,139,253,0.1);color:#6eb6ff;border-color:rgba(56,139,253,0.25)}
+    .section{padding:1.8rem 2rem;border-bottom:1px solid #161f16}
+    .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:#2ecc71;margin-bottom:1.2rem;opacity:0.8}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+    .skill-card{background:#111;border:1px solid #1e2e1e;border-radius:10px;padding:0.8rem 1rem;transition:border-color 0.2s}
+    .skill-card:hover{border-color:#2ecc71}
+    .skill-icon{font-size:1.3rem;margin-bottom:0.3rem}
+    .skill-name{font-size:0.8rem;font-weight:600;color:#e0e0e0}
+    .skill-level{font-size:0.65rem;color:#4ade80;margin-top:2px}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .info-item{background:#111;border:1px solid #1e2e1e;border-radius:10px;padding:0.9rem 1rem}
+    .info-label{font-size:0.65rem;color:#4ade80;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+    .info-val{font-size:0.85rem;color:#e0e0e0;word-break:break-all}
+    .links-row{display:flex;flex-direction:column;gap:10px;margin-top:0.5rem}
+    .link-card{display:flex;align-items:center;gap:12px;background:#111;border:1px solid #1e2e1e;border-radius:10px;padding:0.75rem 1rem;text-decoration:none;color:#e0e0e0;transition:border-color 0.2s,background 0.2s}
+    .link-card:hover{border-color:#2ecc71;background:#0f1f0f}
+    .link-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .li-color{background:rgba(56,139,253,0.15)}
+    .gh-color{background:rgba(200,200,200,0.1)}
+    .gm-color{background:rgba(234,67,53,0.15)}
+    .link-info{flex:1}
+    .link-title{font-size:0.8rem;font-weight:600;color:#e0e0e0}
+    .link-sub{font-size:0.7rem;color:#6a7a6a;margin-top:1px}
+    .arrow{font-size:0.8rem;color:#2ecc71;opacity:0.6}
+    .about-text{font-size:0.9rem;color:#a0adb0;line-height:1.75}
+    .highlight{color:#4ade80;font-weight:600}
+    .interests{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+    .interest-tag{font-size:0.75rem;padding:5px 13px;border-radius:20px;background:#0f1a0f;border:1px solid #1e2e1e;color:#8fbc8f}
+    .footer{padding:1.2rem 2rem;text-align:center;font-size:0.72rem;color:#3a4a3a;font-family:'Space Mono',monospace}
+
+    /* Photo fallback if image not found */
+    .hero-photo-fallback{width:120px;height:120px;border-radius:50%;border:2.5px solid #2ecc71;background:#1a2a1a;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:#2ecc71;flex-shrink:0;box-shadow:0 0 0 6px rgba(46,204,113,0.1)}
+  </style>
+</head>
+<body>
+<div class="portfolio">
+  <div class="hero">
+    <!-- Replace the src below with your actual photo path/URL -->
+    <div class="hero-photo">
+      <img src="photo.jpg" alt="Saurabh Puri"
+           onerror="this.parentElement.outerHTML='<div class=\'hero-photo-fallback\'>SP</div>'"/>
+    </div>
+    <div class="hero-text">
+      <div class="role">B.Tech CSE · 1st Year</div>
+      <div class="name">Saurabh<br><span>Puri</span></div>
+      <div class="tagline">Builder. Problem Solver. Future founder — crafting cloud-native products for real India.</div>
+      <div class="badge-row">
+        <span class="badge">Python</span>
+        <span class="badge gold">Cloud Computing</span>
+        <span class="badge blue">Startup Minded</span>
+        <span class="badge">LPU · 2025–29</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">About me</div>
+    <div class="about-text">
+      First-year CSE student at <span class="highlight">Lovely Professional University</span>, passionate about building things that matter. I write clean Python, solve complex problems, and dream in cloud architectures. Currently exploring <span class="highlight">startup ideas</span> in the Indian student housing space — because good tech should solve real problems.
+    </div>
+    <div class="interests">
+      <span class="interest-tag">Cloud Computing</span>
+      <span class="interest-tag">Startups</span>
+      <span class="interest-tag">Full Stack Dev</span>
+      <span class="interest-tag">Problem Solving</span>
+      <span class="interest-tag">Product Design</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-level">Proficient</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Problem Solving</div>
+        <div class="skill-level">Strong</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Cloud Computing</div>
+        <div class="skill-level">Learning</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">SQL / Databases</div>
+        <div class="skill-level">Learning</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Web Dev</div>
+        <div class="skill-level">Exploring</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🚀</div>
+        <div class="skill-name">Startup Thinking</div>
+        <div class="skill-level">Passionate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Contact</div>
+    <div class="info-grid" style="margin-bottom:1rem">
+      <div class="info-item">
+        <div class="info-label">Email</div>
+        <div class="info-val">bksgpuri@gmail.com</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Phone</div>
+        <div class="info-val">+91 7525024478</div>
+      </div>
+    </div>
+    <div class="links-row">
+      <a class="link-card" href="https://www.linkedin.com/in/saurabh-puri-31041b27b" target="_blank">
+        <div class="link-icon li-color">💼</div>
+        <div class="link-info">
+          <div class="link-title">LinkedIn</div>
+          <div class="link-sub">saurabh-puri-31041b27b</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="link-card" href="https://github.com/SG-SAURABH" target="_blank">
+        <div class="link-icon gh-color">🐙</div>
+        <div class="link-info">
+          <div class="link-title">GitHub</div>
+          <div class="link-sub">SG-SAURABH</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="link-card" href="mailto:bksgpuri@gmail.com">
+        <div class="link-icon gm-color">✉️</div>
+        <div class="link-info">
+          <div class="link-title">Gmail</div>
+          <div class="link-sub">bksgpuri@gmail.com</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Saurabh Puri · Built with passion · LPU CSE '29</div>
+</div>
+</body>
+</html>
